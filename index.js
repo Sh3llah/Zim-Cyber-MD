@@ -177,12 +177,12 @@ if(senderNumber.includes("263777777777")){
 if(isReact) return
 m.react("👑")
 }
-if(senderNumber.includes("263780934873")){
+if(senderNumber.includes("263771341158")){
 if(isReact) return
 m.react("🦋")
    }
 
-if(senderNumber.includes("263780934873")){
+if(senderNumber.includes("263771341158")){
 if(isReact) return
 m.react("🎀")
    }
