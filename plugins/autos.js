@@ -1,15 +1,17 @@
 /**
-
-
+ Bot Name Zɪᴍ Cʏʙᴇʀ-Mᴅ
+Bot owner Mʀ Sʜᴇʟʟᴀʜ Oғᴄ
+owner number+263771341158
  Copyright (C) 2025.
  Licensed under the  GPL-3.0 License;
  You may not sell this script.
  It is supplied in the hope that it may be useful.
  * @project_name : WhatsApp bot
- * @author : mr she3llah <https://github.com/Sh3llah>
+ * @author : <https://github.com/Sh3llah>
  * @description : A Multi-functional whatsapp bot script.
  * @version 3.0.0
  **/
+
 const fs = require('fs');
 const path = require('path');
 const config = require('../config')
@@ -46,7 +48,7 @@ async (conn, mek, m, { from, body, isOwner }) => {
             
             if (config.AUTO_STICKER === 'true') {
                 //if (isOwner) return;        
-                await conn.sendMessage(from,{sticker: { url : data[text]},package: 'Malvin King'},{ quoted: mek })   
+                await conn.sendMessage(from,{sticker: { url : data[text]},package: 'mr shellah'},{ quoted: mek })   
             
             }
         }
@@ -84,4 +86,4 @@ async (conn, mek, m, { from, body, isOwner }) => {
          } 
    );
 //always offline
-                                            
+                      
