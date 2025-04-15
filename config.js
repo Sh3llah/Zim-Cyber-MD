@@ -16,6 +16,8 @@
 const fs = require('fs');
 if (fs.existsSync('config.env')) require('dotenv').config({ path: './config.env' });
 cost config = require('./config.js')
+cost config = require('./src/main')
+cost config = require('./main')
 
 function convertToBool(text, fault = 'true') {
     return text === fault ? true : false;
