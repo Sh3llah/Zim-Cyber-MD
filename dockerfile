@@ -1,26 +1,14 @@
-WORKDIR /app
-
-Install necessary dependencies
+FROM node:lts-buster
+USER root
 RUN apt-get update && \
-    apt-get install -y \
-    ffmpeg \
-    imagemagick \
-    webp && \
+    apt-get install -y ffmpeg webp git && \
     apt-get upgrade -y && \
     rm -rf /var/lib/apt/lists/*
-
-Copy package files and install dependencies
-COPY package*.json ./
-RUN npm install
-
-Install qrcode-terminal globally
-RUN npm install -g qrcode-terminal
-
-Copy the entire project
-COPY 
-
-Expose the port your app uses
-EXPOSE 5000
-
-Start the bot
-CMD ["node", "index.js"]
+USER node
+RUN git clone https://github.com/mrfrankofcc/SUBZERO-MD.git /home/node/SUBZERO-MD
+WORKDIR /home/node/SUBZERO-MD
+RUN chmod -R 777 /home/node/SUBZERO-MD/
+RUN yarn install --network-concurrency 1
+EXPOSE 7860
+ENV NODE_ENV=production
+CMD ["npm", "start"]
