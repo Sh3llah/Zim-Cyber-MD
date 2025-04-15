@@ -1,12 +1,28 @@
-FROM node:lts-buster
+FROM node:18-slim
 
 WORKDIR /app
 
-RUN git clone https://github.com/Sh3llah/Zim-Cyber-MD.git .
+# Install required packages
+RUN apt-get update && \
+    apt-get install -y \
+    git \
+    python3 \
+    make \
+    g++ \
+    && rm -rf /var/lib/apt/lists/*
 
-RUN npm install && npm install -g pm2
+# Copy package files
+COPY package*.json ./
 
-EXPOSE 9090
+# Install dependencies
+RUN npm install
 
+# Copy project files
+COPY . .
 
-CMD ["pm2-runtime", "index.js"]
+# Create session directory with full permissions
+RUN mkdir -p session && \
+    chmod -R 777 session
+
+# Start the bot
+CMD ["node", "index.js"]
