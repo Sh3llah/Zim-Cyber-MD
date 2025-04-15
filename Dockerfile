@@ -1,4 +1,3 @@
-dockerfile
 FROM node:lts-buster
 
 Set working directory inside container
